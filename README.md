@@ -28,12 +28,12 @@ test.py: unit test for the 4 http methods: POST, GET, PUT, DELETE
 
 1. go to dynamodb folder and run:
 
-'''java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb'''
+```java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb```
 
 2. start server
-'''python server.py'''
+```python server.py```
 
 3. run test
-'''python test.py'''
+```python test.py```
 
 
