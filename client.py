@@ -14,7 +14,8 @@ menus = {
 
 for id in restaurants:
     info = restaurants[id]
-    post('http://localhost:5000/restaurant/' + id, data={'name': info['name'], 'address': info['address']})
+    r = post('http://localhost:5000/restaurant/' + id, data={'name': info['name'], 'address': info['address']})
+    print(r.status_code)
 
 for id in restaurants:
     r = get('http://localhost:5000/restaurant/' + id)
