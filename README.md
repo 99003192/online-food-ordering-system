@@ -18,6 +18,7 @@ boto3
 dynamodb
 
 # File description:
+
 - setup.py: create database tables
 
 - server.py: provide REST api
