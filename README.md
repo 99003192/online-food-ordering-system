@@ -15,7 +15,7 @@ Flask_restful
 
 boto3
 
-dynamodb
+dynamodb and configure
 
 # File description:
 
