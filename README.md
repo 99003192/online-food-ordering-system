@@ -5,7 +5,9 @@ This project simulate online food order process.
 
 It has three models: restaurant, menu, and item in menu
 
-# python packages:
+# Prerequisites:
+
+Ubuntu
 
 Flask
 
@@ -15,16 +17,16 @@ boto3
 
 dynamodb
 
-# file usage
-setup.py: create database tables
+# File description:
+- setup.py: create database tables
 
-server.py: provide REST api
+- server.py: provide REST api
 
-client.py: send HTTP requests
+- client.py: send HTTP requests
 
-test.py: unit test for the 4 http methods: POST, GET, PUT, DELETE
+- test.py: unit test for the 4 http methods: POST, GET, PUT, DELETE
 
-# how to run it:
+# How to run it:
 
 go to dynamodb folder and run:
 

@@ -1,5 +1,5 @@
-from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
+from flask import Flask
+from flask_restful import reqparse, Api, Resource
 import boto3
 import json
 import decimal
