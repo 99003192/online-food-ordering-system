@@ -11,29 +11,39 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
 
 # Prerequisites:
 
-Ubuntu (tested version: 14.04.5 LTS; other versions should also work)
+- Required OS: Ubuntu (tested version: 14.04.5 LTS; other versions should also work)
 
-Python 2.X or 3.X
+    Required Language: Python 2.X or 3.X
 
-Install required Python libraries:
+- Install required Python libraries:
 
-`sudo pip install requests Flask Flask-RESTful boto3`
+    `sudo pip install requests Flask Flask-RESTful boto3`
 
-Download and install DynamoDB Local (Downloadable Version):
+- Set up DynamoDB Local (Downloadable Version):
 
-`wget https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip`
+    - Download and unzip DynamoDB: 
+    
+        ```
+        wget https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip 
+        unzip dynamodb_local_latest.zip -d dynamodb
+        ```
 
-`unzip dynamodb_local_latest.zip -d dynamodb`
+        (Note: To run DynamoDB on your computer, you must have the Java Runtime Environment (JRE) version 6.x or newer. 
+        To install JRE:  `sudo apt-get install default-jre`)
 
-`cd dynamodb`
+    - Configure DynamoDB:
 
-Note: To run DynamoDB on your computer, you must have the Java Runtime Environment (JRE) version 6.x or newer. 
-The application doesn't run on older JRE versions.
+        Install AWS Command Line Interface: `sudo apt-get install awscli`
 
-To install JRE:  `sudo apt-get install default-jre`
+        ```
+        aws configure
+        AWS Access Key ID [None]: AKIAJEV6NKQCHAUZPCTQ
+        AWS Secret Access Key [None]: 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
+        Default region name [None]: us-east-2
+        Default output format [None]: ENTER
+        ```
 
-To run DynamoDB: `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
-
+- Download code: `git clone https://github.com/mkuai/online-food-ordering-system.git`
 
 # File description:
 
@@ -49,18 +59,18 @@ To run DynamoDB: `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLoca
 
 go to dynamodb folder and run:
 
-```java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb```
+`java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
 
 create database tables:
 
-```python setup.py```
+`python setup.py`
 
 start server:
 
-```python server.py```
+`python server.py`
 
 run test:
 
-```python test.py```
+`python test.py`
 
 
