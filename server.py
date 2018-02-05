@@ -19,12 +19,15 @@ class DecimalEncoder(json.JSONEncoder):
         return super(DecimalEncoder, self).default(o)
 
 
+# db resource
 dynamodb = boto3.resource('dynamodb', region_name='us-east-2', endpoint_url="http://localhost:8000")
 
+# three table instances for three db tables
 table_restaurant = dynamodb.Table('Restaurant_Meng')
 table_menu = dynamodb.Table('Menu_Meng')
 table_item = dynamodb.Table('Item_Meng')
 
+# add parser for JSON names
 parser = reqparse.RequestParser()
 parser.add_argument('name')
 parser.add_argument('address')
@@ -33,6 +36,7 @@ parser.add_argument('type')
 parser.add_argument('menu')
 
 
+# Resource: restaurant
 class Restaurant(Resource):
     def get(self, restaurant_id):
         response = table_restaurant.get_item(
@@ -73,6 +77,7 @@ class Restaurant(Resource):
         )
 
 
+# Resource: menu
 class Menu(Resource):
     def get(self, menu_id):
         response = table_menu.get_item(
@@ -113,6 +118,7 @@ class Menu(Resource):
         )
 
 
+# Resource: item
 class Item(Resource):
     def get(self, item_id):
         response = table_item.get_item(
@@ -153,6 +159,7 @@ class Item(Resource):
         )
 
 
+# add each resource and assign different URLs
 api.add_resource(Restaurant, '/restaurant/<restaurant_id>')
 api.add_resource(Menu, '/menu/<menu_id>')
 api.add_resource(Item, '/item/<item_id>')

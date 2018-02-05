@@ -44,40 +44,27 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
 - Download project code: `git clone https://github.com/mkuai/online-food-ordering-system.git`
 
 # File description:
-
 - setup.py: create database tables
-
 - server.py: provide REST API
-
-- client.py: send HTTP requests
-
 - test.py: unit test for the 4 HTTP methods: POST, GET, PUT, DELETE
 
 # How to run it:
-
  - Run DynamoDB
      ```
      # open a terminal
      cd dynamodb
      java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
      ```
-- Create database tables
+- Create database tables and run server
     ```
     # open a terminal
     cd online-food-ordering-system
     python setup.py
-    ```
-- Run server:
-    ```
     python server.py
     ```
-- Run client:
+- Run client unit test:
     ```
     # open a terminal
     cd online-food-ordering-system
-    python client.py
-    ```
-- Run unit test:
-    ```
-    python test.py
+    python client-unittest.py
     ```
