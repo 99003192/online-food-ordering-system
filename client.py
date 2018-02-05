@@ -1,4 +1,4 @@
-from requests import put, get, post
+from requests import get, post
 
 restaurants = {
     '1': {'name': 'Panda', 'address': '15 street'},
