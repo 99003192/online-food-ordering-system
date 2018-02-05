@@ -7,7 +7,6 @@ import decimal
 app = Flask(__name__)
 api = Api(app)
 
-
 # Helper class to convert a DynamoDB item to JSON.
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
