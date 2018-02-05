@@ -57,20 +57,23 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
 
 # How to run it:
 
-go to dynamodb folder and run:
+ - Run DynamoDB
+     - open a terminal
+     - `cd dynamodb`
+     - `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
 
-`java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
 
-create database tables:
 
-`python setup.py`
+- Create database tables
+    - open a terminal
+    - `python setup.py`
 
-start server:
+- Run server:
+    - open a terminal
+    - `python server.py`
 
-`python server.py`
-
-run test:
-
-`python test.py`
+- Run test:
+    - open a terminal
+    - `python test.py`
 
 
