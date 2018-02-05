@@ -1,6 +1,5 @@
 import unittest
 import json
-
 from requests import put, get, post, delete
 
 # test data source
@@ -24,7 +23,6 @@ items = {
 
 
 class RestApiTest(unittest.TestCase):
-
     def setUp(self):
         self.Url = 'http://localhost:5000'
 
