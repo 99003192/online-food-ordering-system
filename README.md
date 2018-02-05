@@ -1,10 +1,10 @@
-Online Food Ordering System
+Online Food Ordering System (REST API)
 ====
 
-This project simulate online food order process.
+This project simulates online food order process.
 
 It has three types of objects: restaurant, menu, and item in menu. 
-Each restaurant can have 0 to many menus associated with it (Breakfast, lunch, dinner, etc.).
+Each restaurant can have 0 to many menus associated with it (breakfast, lunch, dinner, etc.).
 Each menu can have 0 to many menu items associated with it.
 
 This project uses Flask to host REST server and DynamoDB as the data storage.
@@ -22,19 +22,17 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
 - Set up DynamoDB Local (Downloadable Version):
 
     - Download and unzip DynamoDB: 
-    
         ```
         wget https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip 
         unzip dynamodb_local_latest.zip -d dynamodb
         ```
-
         (Note: To run DynamoDB on your computer, you must have the Java Runtime Environment (JRE) version 6.x or newer. 
         To install JRE:  `sudo apt-get install default-jre`)
-
-    - Configure DynamoDB:
-
-        Install AWS Command Line Interface: `sudo apt-get install awscli`
-
+    - Configure AWS:
+    
+        Install AWS Command Line Interface (CLI): `sudo apt-get install awscli`
+        
+        Configure AWS using CLI:
         ```
         aws configure
         AWS Access Key ID [None]: AKIAJEV6NKQCHAUZPCTQ
@@ -43,13 +41,13 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
         Default output format [None]: ENTER
         ```
 
-- Download code: `git clone https://github.com/mkuai/online-food-ordering-system.git`
+- Download project code: `git clone https://github.com/mkuai/online-food-ordering-system.git`
 
 # File description:
 
 - setup.py: create database tables
 
-- server.py: provide REST api
+- server.py: provide REST API
 
 - client.py: send HTTP requests
 
@@ -72,7 +70,11 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
     - open a terminal
     - `python server.py`
 
-- Run test:
+- Run client:
+    - open a terminal
+    - `python client.py`
+
+- Run unit test:
     - open a terminal
     - `python test.py`
 
