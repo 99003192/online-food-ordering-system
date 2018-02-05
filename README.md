@@ -57,34 +57,27 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
 
  - Run DynamoDB
      ```
+     # open a terminal
      cd dynamodb
      java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
      ```
-
-
-
 - Create database tables
     ```
+    # open a terminal
     cd online-food-ordering-system
     python setup.py
     ```
-
 - Run server:
     ```
-    cd online-food-ordering-system
     python server.py
     ```
-
 - Run client:
     ```
+    # open a terminal
     cd online-food-ordering-system
     python client.py
     ```
-
 - Run unit test:
     ```
-    cd online-food-ordering-system
     python test.py
     ```
-
-
