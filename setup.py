@@ -5,6 +5,7 @@ import boto3
 
 dynamodb = boto3.resource('dynamodb', region_name='us-east-2', endpoint_url="http://localhost:8000")
 
+# create table for restaurant data
 dynamodb.create_table(
     TableName='Restaurant_Meng',
     KeySchema=[
@@ -25,6 +26,7 @@ dynamodb.create_table(
     }
 )
 
+# create table for menu data
 dynamodb.create_table(
     TableName='Menu_Meng',
     KeySchema=[
@@ -45,6 +47,7 @@ dynamodb.create_table(
     }
 )
 
+# create table for item data
 dynamodb.create_table(
     TableName='Item_Meng',
     KeySchema=[
