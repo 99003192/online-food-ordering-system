@@ -3,6 +3,7 @@ import json
 
 from requests import put, get, post, delete
 
+# test data source
 restaurants = {
     1: {'name': 'Panda', 'address': '15 street'},
     2: {'name': 'Mr Chen', 'address': 'Hackbeery'},
@@ -28,55 +29,70 @@ class RestApiTest(unittest.TestCase):
         self.Url = 'http://localhost:5000'
 
     def test_restaurant_api(self):
+        print('testing restaurant api:')
         for restaurant_id in restaurants:
             info = restaurants[restaurant_id]
             # add a new entry
+            print('    post')
             r = post(self.Url + '/restaurant/' + str(restaurant_id),
                      data={'name': info['name'], 'address': info['address']})
             self.assertEqual(r.status_code, 200)
             # get an entry
+            print('    get')
             r = get(self.Url + '/restaurant/' + str(restaurant_id))
             self.assertEqual(r.json(), json.dumps({'id': restaurant_id, 'info': info}))
             # update an entry
+            print('    put')
             r = put(self.Url + '/restaurant/' + str(restaurant_id),
                     data={'name': info['name'], 'address': info['address']})
             self.assertEqual(r.status_code, 200)
             # delete an entry
+            print('    delete')
             r = delete(self.Url + '/restaurant/' + str(restaurant_id))
             self.assertEqual(r.status_code, 204)
 
     def test_menu_api(self):
+        print('testing menu api:')
         for menu_id in menus:
             info = menus[menu_id]
             # add a new entry
+            print('    post')
             r = post(self.Url + '/menu/' + str(menu_id),
                      data={'restaurant': info['restaurant'], 'type': info['type']})
             self.assertEqual(r.status_code, 200)
             # get an entry
+            print('    get')
             r = get(self.Url + '/menu/' + str(menu_id))
             self.assertEqual(r.json(), json.dumps({'id': menu_id, 'info': info}))
             # update an entry
+            print('    put')
             r = put(self.Url + '/menu/' + str(menu_id),
                     data={'restaurant': info['restaurant'], 'type': info['type']})
             self.assertEqual(r.status_code, 200)
             # delete an entry
+            print('    delete')
             r = delete(self.Url + '/menu/' + str(menu_id))
             self.assertEqual(r.status_code, 204)
 
     def test_item_api(self):
+        print('testing item api:')
         for item_id in items:
             info = items[item_id]
             # add a new entry
+            print('    post')
             r = post(self.Url + '/item/' + str(item_id), data={'menu': info['menu'], 'name': info['name']})
             self.assertEqual(r.status_code, 200)
             # get an entry
+            print('    get')
             r = get(self.Url + '/item/' + str(item_id))
             self.assertEqual(r.json(), json.dumps({'id': item_id, 'info': info}))
             # update an entry
+            print('    put')
             r = put(self.Url + '/item/' + str(item_id),
                     data={'menu': info['menu'], 'name': info['name']})
             self.assertEqual(r.status_code, 200)
             # delete an entry
+            print('    delete')
             r = delete(self.Url + '/item/' + str(item_id))
             self.assertEqual(r.status_code, 204)
 
