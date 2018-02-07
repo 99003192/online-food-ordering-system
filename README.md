@@ -35,8 +35,8 @@ This project uses Flask to host REST server and DynamoDB as the data storage.
         Configure AWS using CLI:
         ```
         aws configure
-        AWS Access Key ID [None]: AKIAJEV6NKQCHAUZPCTQ
-        AWS Secret Access Key [None]: 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
+        AWS Access Key ID [None]: XXXX
+        AWS Secret Access Key [None]: XXXX
         Default region name [None]: us-east-2
         Default output format [None]: ENTER
         ```
